@@ -65,3 +65,19 @@ for (let i = 1; i <= 9; i++) {
     }
   }
 }
+
+loadSchedule();
+
+$(".saveBtn").click(function() {
+  let content = $(this).parent().find("textarea").val();
+  let contentNum = $(this).parent().find("textarea").attr("data-hour");
+
+  localStorage.setItem("time" + contentNum, content);
+  $("#time" + contentNum).find("textarea").val(content);
+});
+
+function loadSchedule() {
+  for (let i = 1; i <= 9; i++) {
+    $("#time" + i).find("textarea").val(localStorage.getItem("time" + i));
+  }
+}
