@@ -15,8 +15,6 @@ time9 = 5
 */
 
 let timeCheck = (moment().format("LT")).split(/[: ]+/);
-timeCheck[0] = 11;
-timeCheck[2] = "AM"
 
 for (let i = 1; i <= 9; i++) {
   let hourCSS = "time" + i;
